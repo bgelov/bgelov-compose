@@ -2,5 +2,5 @@
 Docker Compose samples
 
 ## Prometheus
-Compose file: compose.yml
-Prometheus configuration: prometheus/prometheus.yml
+- Compose file: compose.yml
+- Prometheus configuration: prometheus/prometheus.yml
