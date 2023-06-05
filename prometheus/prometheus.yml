@@ -20,6 +20,7 @@ scrape_configs:
     scheme: http
     static_configs:
       - targets:
+        # Service name in the compose.yml
         - 'prometheus:9090'
           
           
