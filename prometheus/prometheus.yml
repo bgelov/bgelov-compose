@@ -1,3 +1,5 @@
+# Prometheus config man: https://prometheus.io/docs/prometheus/latest/configuration/configuration/
+
 global:
   # How frequently to scrape targets. Default: 1m
   scrape_interval: 30s
