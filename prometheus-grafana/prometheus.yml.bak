@@ -22,15 +22,10 @@ scrape_configs:
     scheme: http
     static_configs:
       - targets:
-        - prometheus:9090
-        
-  - job_name: cadvisor
-    scrape_interval: 5s
-    static_configs:
-      - targets:
-        - cadvisor:8080
-        
-        
+        # Service name in the compose.yml
+        - 'prometheus:9090'
+          
+          
 #alerting:
 #  alertmanagers:
 #  - static_configs:

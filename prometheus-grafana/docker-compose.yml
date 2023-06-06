@@ -1,49 +1,30 @@
-# Prometheus compose man: https://prometheus.io/docs/guides/cadvisor/#docker-compose-configuration
+version: '3.2'
 services:
   prometheus:
-    # https://hub.docker.com/r/prom/prometheus
-    image: prom/prometheus
+    image: prom/prometheus:latest
     container_name: prometheus
     ports:
-      - 9090:9090
+    - 9090:9090
     command:
-      - --config.file=/etc/prometheus/prometheus.yml
+    - --config.file=/etc/prometheus/prometheus.yml
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
     depends_on:
-      - cadvisor
+    - cadvisor
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
     ports:
-      - 8080:8080
+    - 8080:8080
     volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
     depends_on:
-      - redis
+    - redis
   redis:
     image: redis:latest
     container_name: redis
     ports:
-      - 6379:6379
-    
-    # restart: unless-stopped
-    # volumes:
-    #   - ./prometheus:/etc/prometheus
-    #   - prom_data:/prometheus
-  #grafana:
-   # image: grafana/grafana
-   # container_name: grafana
-   # ports:
-   #   - 3000:3000
-   # restart: unless-stopped
-   # environment:
-   #   - GF_SECURITY_ADMIN_USER=admin
-   #   - GF_SECURITY_ADMIN_PASSWORD=grafana
-   # volumes:
-  #    - ./grafana:/etc/grafana/provisioning/datasources
-#volumes:
-#  prom_data:
+    - 6379:6379
