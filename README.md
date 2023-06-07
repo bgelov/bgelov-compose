@@ -5,4 +5,4 @@
 - prometheus.yml - Prometheus configuration
 
 ## Basic authentication for Prometheus
-I wrote a script to generate web.yml: https://github.com/bgelov/prometheus-web-yml
+web.yml generator: https://github.com/bgelov/prometheus-web-yml
