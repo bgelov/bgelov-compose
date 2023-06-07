@@ -1,4 +1,4 @@
-# Deploy Prometheus + Grafana monitoring with Docker Compose
+Deploy Prometheus + Grafana monitoring with Docker Compose
 
 ## Files
 - docker-compose.yml - docker compose file
