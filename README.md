@@ -1,4 +1,4 @@
-Deploy Docker Compose Prometheus (with basic auth) + Grafana monitoring
+Deploy Docker Compose Prometheus monitoring (with basic auth) + Node exporter + Grafana
 
 ## Files
 - docker-compose.yml - docker compose file
